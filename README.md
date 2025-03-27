@@ -2,7 +2,8 @@
 
 ✨ Tampilan Tools
 
-https://imgur.com/8k4eAiU
+![NgOCR-in Screenshot](https://i.imgur.com/8k4eAiU.png)
+
 
 🔥 Fitur
 
