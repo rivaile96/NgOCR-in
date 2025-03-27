@@ -1,17 +1,65 @@
-# NgOCR-in 🚀  
-**Otomatisasi OCR dengan Mudah & Cepat**  
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=NgOCR-in)](https://git.io/typing-svg)
 
-## 🔍 Apa itu NgOCR-in?  
-NgOCR-in adalah alat yang mempermudah proses Optical Character Recognition (OCR) untuk mengekstrak teks dari gambar atau dokumen secara otomatis!  
+✨ Tampilan Tools
 
-## 🎯 Fitur  
-✅ **Mudah Digunakan** – Cukup jalankan script dan dapatkan teksnya!  
-✅ **Cepat & Akurat** – Menggunakan teknologi OCR terbaik.  
-✅ **Open Source** – Gratis & bisa dikembangkan oleh siapa saja!  
+![NgOCR-in Screenshot](https://imgur.com/a/piHosd4)
 
-## 📥 Instalasi  
+🔥 Fitur
+
+- Mendukung berbagai bahasa OCR
+- Antarmuka terminal yang keren dan mudah digunakan
+- Proses OCR yang cepat dan akurat
+
+📦 Instalasi
+
+Sebelum menjalankan NgOCR-in, pastikan kamu sudah memiliki Python di sistemmu.
+
+Clone repository ini:
+
 ```bash
-git clone https://github.com/rivaile96/NgOCR-in.git  
-cd NgOCR-in  
-pip install -r requirements.txt  
+git clone https://github.com/rivaile96/NgOCR-in.git
+cd NgOCR-in
+```
+
+Buat virtual environment:
+
+```bash
+python3 -m venv ocr-env
+```
+
+Aktifkan virtual environment:
+
+```bash
+source ocr-env/bin/activate  # Untuk Linux/MacOS
+```
+
+Jika menggunakan Windows:
+
+```bash
+ocr-env\Scripts\activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+🚀 Cara Menjalankan
+
+Pastikan virtual environment sudah aktif:
+
+```bash
+source ocr-env/bin/activate
+```
+
+(Windows: `ocr-env\Scripts\activate`)
+
+Jalankan script utama:
+
+```bash
+python main.py
+```
+
+Ikuti instruksi di layar dan pilih opsi yang tersedia.
 
