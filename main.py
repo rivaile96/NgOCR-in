@@ -34,6 +34,13 @@ ascii_art = f"""{CYAN}
                  Version: v2.0{RESET}
 """
 
+def normalize_path(path):
+    if os.name == 'posix' and ':' in path:
+        drive, rest = path.split(':', 1)
+        rest = rest.strip('\\/').replace('\\', '/').replace(' ', '\\\040')
+        return f"/mnt/{drive.lower()}/{rest}"
+    return path
+
 def ocr_image(image_path, lang, psm):
     custom_config = f"--psm {psm}" if psm else ""
     image = cv2.imread(image_path)
@@ -70,6 +77,24 @@ def detect_language(text):
     except:
         return "unknown"
 
+def pilih_bahasa_translate():
+    print("\n🌐 Pilih Bahasa Target untuk Terjemahan:")
+    daftar = {
+        "1": ("id", "Indonesian"),
+        "2": ("en", "English"),
+        "3": ("ja", "Japanese"),
+        "4": ("zh-CN", "Chinese (Simplified)"),
+        "5": ("ko", "Korean"),
+        "6": ("ru", "Russian"),
+        "7": ("ar", "Arabic"),
+        "8": ("fr", "French"),
+        "9": ("auto", "Auto-detect")
+    }
+    for key, (_, label) in daftar.items():
+        print(f"{key}. {label}")
+    pilihan = input("Pilih (1-9, default 1): ") or "1"
+    return daftar.get(pilihan, ("id", "Indonesian"))[0]
+
 def ocr_process(image_path, lang_code):
     psm = input("Masukkan PSM (default 6): ") or "6"
     print(f"\n⏳ Menjalankan OCR...\n")
@@ -80,7 +105,7 @@ def ocr_process(image_path, lang_code):
     translate = input("\nTerjemahkan hasil? (y/n): ").lower()
     translated = ""
     if translate == 'y':
-        target_lang = input("Masukkan kode bahasa target (cth: id, en, ja, fr): ")
+        target_lang = pilih_bahasa_translate()
         print(f"\n{YELLOW}=== HASIL TERJEMAHAN ==={RESET}\n")
         translated = translate_text(result, target_lang)
         print(f"{YELLOW}{translated}{RESET}")
@@ -117,6 +142,7 @@ def menu():
     if pilihan == "1":
         lang = pilih_bahasa()
         path = input("\n📁 Masukkan path gambar: ")
+        path = normalize_path(path)
         if os.path.isfile(path):
             ocr_process(path, lang)
         else:
@@ -124,9 +150,10 @@ def menu():
     elif pilihan == "2":
         lang = pilih_bahasa()
         folder = input("\n📁 Masukkan path folder: ")
+        folder = normalize_path(folder)
         if os.path.isdir(folder):
             for filename in os.listdir(folder):
-                if filename.lower().endswith(('.png', '.jpg', '.jpeg')):
+                if filename.lower().endswith((".png", ".jpg", ".jpeg")):
                     print(f"\n{CYAN}📄 Memproses: {filename}{RESET}")
                     path = os.path.join(folder, filename)
                     ocr_process(path, lang)
