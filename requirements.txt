@@ -3,3 +3,4 @@ opencv-python
 deep-translator
 termcolor
 python-docx
+langdetect
