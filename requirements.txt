@@ -1,9 +1,5 @@
-numpy==2.2.4
-opencv-python==4.11.0.86
-opencv-python-headless==4.11.0.86
-packaging==24.2
-pillow==11.1.0
-pygame==2.6.1
-PyMuPDF==1.25.4
-pytesseract==0.3.13
-watchdog==6.0.0
+pytesseract
+opencv-python
+deep-translator
+termcolor
+python-docx
