@@ -1,66 +1,98 @@
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=34&pause=1000&width=435&lines=NgOCR-in)](https://git.io/typing-svg)
 
-✨ Tampilan Tools
+# ✨ NgOCR-in v2.0
+
+OCR (Optical Character Recognition) cerdas dengan dukungan multi-bahasa, auto-translate opsional, dan ekspor hasil ke `.txt` & `.docx`. Dirancang dengan tampilan terminal interaktif, penuh warna, dan dukungan untuk drag & drop dari Windows ke WSL/Linux.
+
+---
+
+### 📸 Tampilan Tools
 
 ![NgOCR-in Screenshot](https://i.imgur.com/8k4eAiU.png)
 
+---
 
-🔥 Fitur
+### 🚀 Fitur Utama
 
-- Mendukung berbagai bahasa OCR
-- Antarmuka terminal yang keren dan mudah digunakan
-- Proses OCR yang cepat dan akurat
+- Dukungan OCR berbagai bahasa (Latin, Jepang, Korea, Arab, China, dll)
+- Deteksi otomatis bahasa gambar (auto-detect)
+- Translate opsional ke berbagai bahasa
+- Output hasil ke `.txt` dan `.docx`
+- Tampilan terminal dengan warna yang menarik
+- Mendukung batch processing (OCR banyak gambar sekaligus)
+- Bisa drag & drop path file dari Windows ke WSL/Linux
 
-📦 Instalasi
+---
 
-Sebelum menjalankan NgOCR-in, pastikan kamu sudah memiliki Python di sistemmu.
+### ⚙️ Instalasi
 
-Clone repository ini:
-
+#### 1. Clone Repositori
 ```bash
-git clone https://github.com/rivaile96/NgOCR-in.git
+git clone https://github.com/kamu-user/NgOCR-in.git
 cd NgOCR-in
 ```
 
-Buat virtual environment:
-
+#### 2. Buat & Aktifkan Virtual Environment
 ```bash
 python3 -m venv ocr-env
+source ocr-env/bin/activate  # atau gunakan .\ocr-env\Scripts\activate di Windows
 ```
 
-Aktifkan virtual environment:
-
-```bash
-source ocr-env/bin/activate  # Untuk Linux/MacOS
-```
-
-Jika menggunakan Windows:
-
-```bash
-ocr-env\Scripts\activate
-```
-
-Install dependencies:
-
+#### 3. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-🚀 Cara Menjalankan
+#### 4. Install Tesseract dan Font (Linux/WSL)
+```bash
+sudo apt update
+sudo apt install tesseract-ocr-all
+sudo apt install fonts-dejavu-core fonts-liberation fonts-freefont-ttf
+```
+> *Instalasi font ini penting agar hasil OCR tidak menjadi simbol aneh atau rusak.*
 
-Pastikan virtual environment sudah aktif:
+---
+
+### ▶️ Menjalankan Tools
 
 ```bash
-source ocr-env/bin/activate
+python3 main.py
 ```
 
-(Windows: `ocr-env\Scripts\activate`)
+- Pilih mode OCR (Gambar tunggal atau folder/batch)
+- Pilih bahasa OCR atau gunakan Auto-Detect
+- Masukkan path gambar (bisa drag & drop ke terminal)
+- Pilih PSM (Page Segmentation Mode, default: 6)
+- Hasil OCR akan tampil, dan bisa dipilih untuk diterjemahkan atau tidak
+- Simpan hasil jika diinginkan (otomatis simpan ke `ocr_result.txt` dan `ocr_result.docx`)
 
-Jalankan script utama:
+---
 
-```bash
-python main.py
+### 📦 Struktur Output
+
+```
+📁 NgOCR-in
+├── ocr_result.txt       # Hasil OCR & terjemahan dalam format teks
+├── ocr_result.docx      # Hasil OCR & terjemahan dalam format dokumen
 ```
 
-Ikuti instruksi di layar dan pilih opsi yang tersedia.
+---
+
+### 📌 Catatan Tambahan
+
+- Gunakan `fonts` yang mendukung banyak karakter agar hasil OCR maksimal.
+- Beberapa bahasa memerlukan model khusus, pastikan `tesseract-ocr-all` telah terinstal.
+- Pastikan Python 3.8+ telah terinstal.
+- Rekomendasi terminal: Windows Terminal / Terminator / Tilix agar warna tampil sempurna.
+
+---
+
+### 👨‍💻 Author
+
+**Rivaile**  
+NgOCR-in - v2.0 ❤️  
+
+---
+
+> Feel free to fork, improve, and share. Let's OCR the world! 🌍
 
