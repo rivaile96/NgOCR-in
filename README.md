@@ -28,7 +28,7 @@ OCR (Optical Character Recognition) cerdas dengan dukungan multi-bahasa, auto-tr
 
 #### 1. Clone Repositori
 ```bash
-git clone https://github.com/kamu-user/NgOCR-in.git
+git clone https://github.com/rivaile96/NgOCR-in.git
 cd NgOCR-in
 ```
 
