@@ -1,4 +1,4 @@
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=900&size=25&pause=1000&color=56F7F0&background=FB16EE00&width=440&lines=PHISPYRATE+Face+Verification)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=900&size=33&pause=1000&color=F71A58&background=FB16EE00&width=440&lines=NgOCR-in)](https://git.io/typing-svg)
 
 # ✨ NgOCR-in v2.0
 
